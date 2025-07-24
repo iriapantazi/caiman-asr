@@ -4,7 +4,7 @@ from functools import partial
 import numpy as np
 from beartype import beartype
 from datasets import Audio, load_dataset
-from datasets.distributed import split_dataset_by_node
+i# from datasets.distributed import split_dataset_by_node
 
 from caiman_asr_train.args.hugging_face import HuggingFaceArgs
 from caiman_asr_train.data.external_source.core import str_to_numpy_unicode
@@ -27,6 +27,7 @@ class HuggingFaceReader:
         max_transcript_length: int | float,
         min_duration: int | float = 0.05,
     ):
+        pass
         dataset = load_dataset(
             hugging_face_args.dataset,
             name=hugging_face_args.config,
