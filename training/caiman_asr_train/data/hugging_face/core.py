@@ -5,13 +5,13 @@ import numpy as np
 from beartype import beartype
 from datasets import Audio, load_dataset
 
-# from datasets.distributed import split_dataset_by_node
-
 from caiman_asr_train.args.hugging_face import HuggingFaceArgs
 from caiman_asr_train.data.external_source.core import str_to_numpy_unicode
 from caiman_asr_train.data.text.preprocess import norm_and_tokenize
 from caiman_asr_train.data.tokenizer import Tokenizer
 from caiman_asr_train.setup.text_normalization import NormalizeConfig
+
+# from datasets.distributed import split_dataset_by_node
 
 
 @beartype
@@ -39,9 +39,10 @@ class HuggingFaceReader:
         )
         # Do maps/filters on the fly to save space:
         iterable_dataset = dataset.to_iterable_dataset(num_shards=num_shards)
-        sharded_dataset = split_dataset_by_node(
-            iterable_dataset, world_size=num_shards, rank=shard_id
-        )
+        sharded_dataset = iterable_dataset
+        # sharded_dataset = split_dataset_by_node(
+        #     iterable_dataset, world_size=num_shards, rank=shard_id
+        # )
         resampled_dataset = sharded_dataset.cast_column(
             "audio", Audio(sampling_rate=sample_rate, mono=True, decode=True)
         )
