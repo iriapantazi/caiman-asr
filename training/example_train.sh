@@ -6,10 +6,9 @@ SPM_SIZE=1023
 MODEL=testing
 CONFIG_NAME="${MODEL}-${SPM_SIZE}sp"
 DATASET_NAME_LOWER_CASE=open1.8-beta
-WINSZ=0.02 # 0.025 for base/large, 0.02 for testing
+WINSZ=0.02
 MAX_DURATION_SECS=20.0
 
-# TRANSCRIPTS='"meta-llama/Llama-3.2-3B-Instruct", "meta-llama/Llama-3.2-3B-Instruct-stuctured-1", "transcript"'
 TRANSCRIPTS='"transcript"'
 
 cat /workspace/training/configs/${CONFIG_NAME}.yaml |
