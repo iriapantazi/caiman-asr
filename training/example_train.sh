@@ -11,7 +11,7 @@ MAX_DURATION_SECS=20.0
 
 TRANSCRIPTS='"transcript"'
 
-cat /workspace/training/configs/${CONFIG_NAME}.yaml |
+cat configs/${CONFIG_NAME}.yaml |
 	sed "s|TRANSCRIPTS|${TRANSCRIPTS}|" |
 	sed "s|SENTENCEPIECE|${DATASET_NAME_LOWER_CASE}${SPM_SIZE}|" |
 	sed "s|STATS_SUBDIR|${DATASET_NAME_LOWER_CASE}-winsz${WINSZ}|" |
