@@ -521,7 +521,7 @@ if __name__ == "__main__":
     maybe_restart_with_torchrun(
         args.num_gpus,
         args.called_by_torchrun,
-        "/workspace/training/caiman_asr_train/train.py",
+        "caiman_asr_train/train.py",
     )
     profilers = set_up_profiling(args.profiler, args.output_dir, args.timestamp)
     main(args)
