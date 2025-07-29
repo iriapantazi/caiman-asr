@@ -8,3 +8,4 @@ python -m pip install .
 cd ../
 pip install --disable-pip-version-check -U -r requirements.txt
 python -m pip install -e .
+pip install --no-dependencies torchdata==0.6.1
