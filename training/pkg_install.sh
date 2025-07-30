@@ -12,6 +12,11 @@ pip install --no-dependencies torchdata==0.6.1
 python ./caiman_asr_train/data/make_datasets/librispeech.py --dataset_parts dev-clean
 mkdir -p /datasets/stats
 mkdir -p /datasets/sentencepieces
+
 cp open1.8-beta1023.model /datasets/sentencepieces/.
 cp open1.8-beta1023.vocab /datasets/sentencepieces/.
+cp winter2024_fallback17407.model /datasets/sentencepieces/.
+cp winter2024_fallback17407.vocab /datasets/sentencepieces/.
+
 cp -r open1.8-beta-winsz0.02 /datasets/stats/.
+cp -r winter2024_fallback-winsz0.025 /datasets/stats/.
