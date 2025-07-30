@@ -526,3 +526,4 @@ if __name__ == "__main__":
     profilers = set_up_profiling(args.profiler, args.output_dir, args.timestamp)
     main(args)
     finish_profiling(args.profiler, args.output_dir, profilers, args.timestamp)
+    dist.destroy_process_group()
