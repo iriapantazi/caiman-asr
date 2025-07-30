@@ -461,8 +461,9 @@ class DaliPipeline(nvidia.dali.pipeline.Pipeline):
 
         audio = self.pad(audio)
 
-        raw_transcript = nvidia.dali.fn.pad(raw_transcript, fill_value=-1)
-        fname = nvidia.dali.fn.pad(fname, fill_value=-1)
+        # remove due to nvidia.dali.fn.pad ecnountering issues
+        # raw_transcript = nvidia.dali.fn.pad(raw_transcript, fill_value=-1)
+        # fname = nvidia.dali.fn.pad(fname, fill_value=-1)
 
         # When modifying DALI pipeline returns, make sure you update `output_map`
         # in DALIGenericIterator invocation
