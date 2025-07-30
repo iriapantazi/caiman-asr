@@ -17,7 +17,7 @@ def return_schemas():
     schemas = []
     for model in ModelVariant:
         with open(
-            f"/root/caiman-asr/training/caiman_asr_train/export/model_schema/{model.value}.json",
+            f"/caiman-asr/training/caiman_asr_train/export/model_schema/{model.value}.json",
             "r",
         ) as file:
             schema = json.load(file)

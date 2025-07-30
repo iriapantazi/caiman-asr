@@ -35,6 +35,6 @@ NUM_GPUS=$(nvidia-smi -L | wc -l)
 	--val_manifests librispeech-dev-clean-flac.json \
 	--data_dir /datasets/LibriSpeech/ \
 	--skip_state_dict_check \
-	--training_steps 20 \
+	--training_steps 20000 \
 	--calculate_emission_latency \
 	--delay_penalty 0.0
