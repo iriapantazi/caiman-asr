@@ -20,6 +20,8 @@ cat configs/${CONFIG_NAME}.yaml |
 		/tmp/${CONFIG_NAME}.yaml
 
 # Set as appropriate for machine
+# It is using ~83/97 GB of GPU memory
+# GPU utilization reaches 90-100% during training
 GBS=1024
 GAB=4
 BSF=2
@@ -37,4 +39,5 @@ NUM_GPUS=$(nvidia-smi -L | wc -l)
 	--skip_state_dict_check \
 	--training_steps 2000 \
 	--calculate_emission_latency \
+	--val_batch_size 4 \
 	--delay_penalty 0.0
