@@ -43,8 +43,8 @@ class MelStats:
         """
         if dir is None:
             raise ValueError("dir must be a string, not None")
-        means = torch.load(f"{dir}/melmeans.pt")
-        vars = torch.load(f"{dir}/melvars.pt")
+        means = torch.load(f"{dir}/melmeans.pt", weights_only=False)
+        vars = torch.load(f"{dir}/melvars.pt", weights_only=False)
         return cls(means, vars)
 
     def __repr__(self) -> str:
