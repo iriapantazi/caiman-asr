@@ -2,6 +2,7 @@
 
 set -Eeuo pipefail
 export NUMBA_CUDA_USE_NVIDIA_BINDING=1
+NAME=$(basename "$0".sh)
 SPM_SIZE=17407
 MODEL=large
 CONFIG_NAME="${MODEL}-${SPM_SIZE}sp"
@@ -40,4 +41,5 @@ NUM_GPUS=$(nvidia-smi -L | wc -l)
 	--training_steps 2000 \
 	--calculate_emission_latency \
 	--val_batch_size 4 \
+	--output_dir /results/$NAME \
 	--delay_penalty 0.0
