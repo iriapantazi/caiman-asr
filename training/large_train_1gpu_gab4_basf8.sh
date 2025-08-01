@@ -25,9 +25,9 @@ cat configs/${CONFIG_NAME}.yaml |
 # GPU utilization reaches 90-100% during training
 GBS=1024
 GAB=4
-BSF=4
+BSF=8
 NUM_GPUS=1 # $(nvidia-smi -L | wc -l)
-# 4 4 -> OOM,  8 2 -> OOM trying 8 4 -> OK
+# 8 4 -> OK now trying 4 8 (higher effective batch size)
 # usign ~70/96 GB of GPU memory
 
 ./scripts/train.sh \
