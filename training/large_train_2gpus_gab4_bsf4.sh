@@ -25,11 +25,11 @@ cat configs/${CONFIG_NAME}.yaml |
 # GPU utilization reached 90-100% during training
 # trying bigger effective batch size
 # GAB 2 BSF 4 -> OOM
-# GAB 2 BSF 8
+# GAB 4 BSF 4 -> trying
 GBS=1024
-GAB=2
-BSF=8
-NUM_GPUS=$(nvidia-smi -L | wc -l)
+GAB=4
+BSF=4
+NUM_GPUS=2 # $(nvidia-smi -L | wc -l)
 
 ./scripts/train.sh \
 	--train_manifests librispeech-dev-clean-flac.json \
