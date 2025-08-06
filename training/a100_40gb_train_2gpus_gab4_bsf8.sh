@@ -25,7 +25,7 @@ cat configs/${CONFIG_NAME}.yaml |
 #
 GBS=1024
 GAB=4
-BSF=4
+BSF=8
 NUM_GPUS=2 # $(nvidia-smi -L | wc -l)
 
 ./scripts/train.sh \
